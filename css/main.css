@@ -73,6 +73,13 @@
     margin: .5em 0 -.5em 0;
 }
 
+/* food img slider title */
+.food-slider-title {
+    /* color: red; */
+    font-size: 1.3em;
+    font-weight: bolder;
+}
+
 /******* <-- DETAILS --> *******/
 
  /* title underline FOODMAP BEGIN view */
@@ -103,7 +110,7 @@
 .grid-food-img-style {
     background-color: #cccccc;
     width: 100%;
-    height: 22vh;
+    height: 27vh;
     display: flex;
     /* flex-flow: nowrap; */
     /* box-sizing: border-box; */
@@ -113,14 +120,32 @@
     object-fit: contain;
 }
 
+/******* <-- CAROUSEL SLIDER-> *******/
 
+/* circle slider style */
+.carousel-indicators {
+    bottom: -39px;
+}
 
+.carousel-control .icon-prev, .carousel-control .icon-next, .carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right {
+    margin-top: 90px;
+}
 
+.carousel-caption {
+    bottom: 60px;
+}
 
+.carousel-indicators .active {
+    background-color: #000 \9;
+}
 
-
-
-
+.item{
+    /* background-image: url(../assets/images/food-image/italian-food.jpg) ; */
+    /* width:100%;
+    height:100%;
+    background-repeat:no-repeat;
+    background-position:center center; */
+}
 
 
 
