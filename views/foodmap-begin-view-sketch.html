@@ -12,6 +12,36 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <!-- main.css -->
     <link rel="stylesheet" href="../css/main.css">
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+
+    <script>
+            function initialize() {
+              var myLatlng = new google.maps.LatLng(-12.1241765,-77.0281543); //coordenadas de ubicación
+              var mapOptions = {
+              zoom: 15, //zoom de tu mapa
+              center: myLatlng, //centrar tu mapa
+              scrollwheel: false, //si colocas true en vez de false el usuario podrá hacer scroll dentro del mapa
+              draggable: true, //esta opción es la manito que aparece y es usado para desplazarse en el mapa
+              mapTypeId: google.maps.MapTypeId.ROADMAP
+              };
+              var map = new google.maps.Map(document.getElementById('google-food'), mapOptions);
+              var contentString = '<img src="logo.png" width="200" style="display:block;margin:auto;"><p>aquí la dirección</p>';//imagen y dirección
+              var infowindow = new google.maps.InfoWindow({content: contentString});
+              var marker = new google.maps.Marker({
+              position: myLatlng,
+              animation:google.maps.Animation.DROP,
+              icon: 'icono-mapa.png', //icono de mapa
+              map: map
+              });
+              infowindow.open(map,marker);
+              google.maps.event.addListener(marker, 'click', function() {
+              infowindow.open(map,marker);
+              });
+            }
+            google.maps.event.addDomListener(window, 'load', initialize);
+            </script>
+            
+
 </head>
 <body>
     <main class="container-flex-column align-items vh100">
@@ -29,12 +59,20 @@
                         </div>
                         
                         <!-- google map image -->
+                        <!-- google map image -->
+                        <div class="google-map-style ">
+                        <!-- <div class="container-fluid"> -->
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
-                                <div class="google-map-style">
-                                    <img class="img-responsive center-block" src="../assets/images/google-map-img.png" alt="google map image">
-                                </div>
+                                <!-- <div class="google-map-style"> -->
+                                        <div id="google-food"></div>
+
+                                        <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m12!1m8!1m3!1d31210.65390239822!2d-77.004206!3d-12.089427!3m2!1i1024!2i768!4f13.1!2m1!1scafeter%C3%ADas+san+borja!5e0!3m2!1ses-419!2spe!4v1514836434962" frameborder="0" style="border:0" allowfullscreen></iframe> -->
+                                    <!-- <img class="img-responsive center-block" src="../assets/images/google-map-img.png" alt="google map image"> -->
+                                <!-- </div> -->
                             </div>
+                        <!-- </div>  -->
+                        </div> 
                         </div> 
 
                         <!-- search input-->

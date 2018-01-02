@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Foodmap Begin View</title>
+    <title>Foodmap Begin View 111</title>
     <!-- Bootstrap css -->
     <!-- <link href="vendors/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
     <link href="../vendors/bootstrap/css/bootstrap.css" rel="stylesheet">
@@ -32,7 +32,7 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="google-map-style">
-                                    <img class="img-responsive center-block" src="../assets/images/google-map-img.png" alt="google map image">
+                                    <div id="google-food"></div>
                                 </div>
                             </div>
                         </div> 
@@ -42,11 +42,49 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <h2 class="foodmap-subtitle medium-yellow-color text-center">Comida cerca de ti</h2>
-                                    <label class="medium-yellow-color text-center" for="restaurant-search-input"></label>
+                                    <label class="medium-yellow-color text-center" for="search"></label>
                                     <div class="input-group">
-                                        <input type="search" name="restaurant-search-input" id="restaurant-search-input" class="form-control" placeholder="Buscar el restaurante de comida..." tabindex="1">
-                                        <div class="input-group-addon darkslategray-bg"><span class="glyphicon glyphicon-search gray"></span></div>
+                                        <input type="text" name="search" id="search" class="form-control" placeholder="¿Qué se antoja el día de hoy :)...?" tabindex="1"  data-toggle="modal" data-target="#myModal">
+                                        <label class="" for="search"></label>
+                                        <div class="input-group-addon darkslategray-bg" id="search"><span class="glyphicon glyphicon-search gray"></span></div>
                                     </div><!-- .input-group END--> 
+                                    <ul class="list-group" id="result"></ul>
+                                     <!-- Modal -->
+                                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                         <div class="modal-dialog">
+                                        <!-- Modal content-->
+                                            <div class="modal-content center-block form-style vh90">
+                                                <!-- Modal body-->
+                                                <div class="modal-body">
+                                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                    <center>
+                                                        <a><img src="assets/images/googleMapsSweets.JPG" name="sweetLogoMap" class="img-circle sweet-img-logo"></a>
+                                                        <h3 class="media-heading" id="name">Nombre del Negocio</h3>
+                                                        <span><strong>Especialidades: </strong></span>
+                                                            <span class="label label-warning">Postres</span>
+                                                            <span class="label label-info">Empanadas</span>
+                                                            <span class="label label-success">Café</span>
+                                                            <span class="label label-info">Infusiones</span>
+                                                    </center>
+                                                    <hr>
+                                                    <center>
+                                                        <p class="text-left"><strong>Datos: </strong><br>
+                                                        <span id="location"></span>
+                                                        <span id="phone"></span>
+                                                        </p>
+                                                        <br>
+                                                    </center>
+                                                </div> <!-- modal body END -->
+                                                <div class="modal-footer">
+                                                    <center>
+                                                        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+                                                    </center>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="modal-container"></div>
                                 </div> <!-- .form-group END--> 
                             </div> <!-- .col-xs-12 col-sm-12 col-md-12 END-->   
                         </div> <!-- .row END--> 
@@ -66,33 +104,33 @@
                                     
                                         <!-- Wrapper for slides -->
                                         <div class="grid-food-img-style">
-                                        <div class="carousel-inner" role="listbox">
-                                            <div class="item active">
-                                                <img src="../assets/images/food-image/italian-food.jpg" alt="food">
-                                                <div class="carousel-caption">
-                                                    <h3 class="food-slider-title">Lo mejor de la Gastronomía Italiana</h3>
+                                            <div class="carousel-inner" role="listbox">
+                                                <div class="item active">
+                                                    <img src="../assets/images/sweetFood/frosty.jpg" class="img-responsive" alt="food">
+                                                    <div class="carousel-caption">
+                                                        <h3 class="food-slider-title">¡NO PUEDES DEJAR DE PROBARLOS!.</h3>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="item">
-                                                <img src="../assets/images/food-image/japanese-food.jpg" alt="food">
-                                                <div class="carousel-caption">
-                                                    <h3 class="food-slider-title">Lo mejor de la Gastronomía Japonesa</h3>
+                                                <div class="item">
+                                                    <img src="../assets/images/sweetFood/zona-punto-Sarcletti-logo.jpg" alt="food">
+                                                    <div class="carousel-caption">
+                                                        <h3 class="food-slider-title">¡NO PUEDES DEJAR DE PROBARLOS!.</h3>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="item">
-                                                <img src="../assets/images/food-image/peruvian-food.jpg" alt="food">
-                                                <div class="carousel-caption">
-                                                    <h3 class="food-slider-title">Lo mejor de la Gastronomía Peruana</h3>
+                                                <div class="item">
+                                                    <img src="../assets/images/sweetFood/marie.jpg" alt="food">
+                                                    <div class="carousel-caption">
+                                                        <h3 class="food-slider-title">¡NO PUEDES DEJAR DE PROBARLOS!.</h3>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                            <div class="item">
-                                                <img src="../assets/images/food-image/thai-food.jpg" alt="food">
-                                                <div class="carousel-caption">
-                                                    <h3 class="food-slider-title">Lo mejor de la Gastronomía Tailandesa</h3>
+                                                <div class="item">
+                                                    <img src="../assets/images/sweetFood/san-cafe.jpg" alt="food">
+                                                    <div class="carousel-caption">
+                                                        <h3 class="food-slider-title">¡NO PUEDES DEJAR DE PROBARLOS!.</h3>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </div> <!-- .carousel inner END-->
-                                        </div>
+                                            </div> <!-- .carousel inner END-->
+                                        </div> <!-- .grid-food-img-style-->
                                     
                                         <!--  Left and Right Arrow Controls -->
                                         <a class="left carousel-control" href="#food" role="button" data-slide="prev">
@@ -107,21 +145,6 @@
                                 </figure>    
                             </div> <!-- .col-xs-12 col-sm-12 col-md-12 END-->
                         </div> <!-- .row END-->
-
-
-
-
-                        <!-- <div class="row">
-                            <div class="col-xs-12 col-sm-12 col-md-12">
-                                <figure class="grid-food-img-style">
-                                    <img class="col-xs-6 col-sm-6 col-md-6 img-responsive" src="../assets/images/food-image/italian-food.jpg" alt="food">
-                                    <img class="col-xs-6 col-sm-6 col-md-6 img-responsive" src="../assets/images/food-image/japanese-food.jpg" alt="food">
-                                    <img class="col-xs-6 col-sm-6 col-md-6 img-responsive" src="../assets/images/food-image/peruvian-food.jpg" alt="food">
-                                    <img class="col-xs-6 col-sm-6 col-md-6 img-responsive" src="../assets/images/food-image/thai-food.jpg" alt="food">
-                                </figure>
-                            </div>
-                        </div>  -->
-                        
                     </form>  <!-- form END-->
                 </div>  <!-- -->
             </div> <!-- .row END-->
@@ -129,10 +152,16 @@
     </main>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="../vendors/bootstrap/js/bootstrap.min.js"></script>
-    <!-- app.js -->
-    <!-- <script type="text/javascript" src="../js/app.js"></script> -->
-</body>
+    <!-- google.map-->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+    <script type="text/javascript" src="../js/google-map.js"></script>
+    <!-- foodmap-begin.js -->
+    <script type="text/javascript" src="../js/foodmap-begin-view.js"></script>
+    <!-- data.js -->
+    <script type="text/javascript" src="../js/data.json"></script>
+</body>    
 </html>

@@ -95,16 +95,23 @@
 /******* <-- IMAGES--> *******/
 
 .google-map-style {
-    background-color: #cccccc;
+    /* background-color: #cccccc; */
     width: 100%;
     height: 25vh;
     /* box-sizing: border-box; */
-    display: flex;
+    /* display: flex; */
+    /* padding-left: -10em; */
+   
 }
 
 .google-map-style>img {
    width: 63%;
    height: auto;
+}
+
+#google-food {
+    width: 100%;
+    height: 25vh;
 }
 
 .grid-food-img-style {
@@ -147,9 +154,26 @@
     background-position:center center; */
 }
 
+/******* <-- MODALS --> *******/
 
+/* images */
+.media-heading {
+    margin-top: 10px;
+    margin-bottom: 8px;
+    font-size: 24px;
+}
 
+.sweet-img-logo {
+    width: 120px;
+    height: 120px;
+    border: 0; 
+}
 
+/* containers */
+
+.modal-body {
+    padding-bottom: 100px;
+}
 
 
 

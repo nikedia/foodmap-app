@@ -1,0 +1,28 @@
+{
+  "name":"Frosty",
+  "image": "../assets/images/googleMapsSweets.JPG",
+  "location": "Av. Javier Prado Este 2900, San Borja 15037",
+  "phone": "(01) 3461944",
+  "web": "https://www.facebook.com/FrostyPastYPan/"
+},
+{
+  "name": "Marié",
+  "image": "../assets/images/googleMapsSweets.JPG",
+  "location": "Las Artes 1030, San Borja 15037",
+  "phone": "(01) 2780056",
+  "web": "http://www.marie.com.pe/"
+},
+{
+  "name":"Sarcletti",
+  "image": "../assets/images/googleMapsSweets.JPG",
+  "location": "Av. Javier Prado Este 2060, San Borja 15036",
+  "phone": "(01) 4761236",
+  "web": "https://www.facebook.com/FrostyPastYPan/"
+},
+{
+  "name": "San Cafe",
+  "image": "../assets/images/googleMapsSweets.JPG",
+  "location": "2415, Av. Aviación, San Borja 15037",
+  "phone": "(01) 2265277",
+  "web": "https://www.facebook.com/FrostyPastYPan/"
+},
